@@ -27,6 +27,31 @@
             text-align: center;
         }
 
+        #add_60{
+            position: relative;
+            right: 10px;
+        }
+
+        .timeButtons{
+            width: 1000px;
+            padding: 8px;
+        }
+
+        .Time60{
+            background-color: #62762b;
+            border-radius: 12px;
+            font-size: 32px;
+            font-family: Hack;
+        }
+
+        .Time30{
+            margin-top: 8px;
+            background-color: #4a592b;
+            border-radius: 8px;
+            font-size: 24px;
+            font-family: Hack;
+        }
+
         .container{
             display: flex;
         }
@@ -44,7 +69,25 @@
         <!-- Table will be generated here -->
         </table>
         <div class="otherItems">
-
+              <input onblur="timeToSeconds(this.value)" type="text" id="time" value="00:00:00" maxlength="8">
+              <table class="timeButtons">
+                  <tr>
+                      <td>
+                          <input onclick="addSeconds(-60)" class="Time60" type="button" id="remove_60" value="-60">
+                      </td>
+                      <td>
+                          <input onclick="addSeconds(60)" class="Time60" type="button" id="add_60" value="+60">
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>
+                          <input onclick="addSeconds(-30)" class="Time30" type="button" id="remove_30" value="-30">
+                      </td>
+                      <td>
+                          <input onclick="addSeconds(30)" class="Time30" type="button" id="add_30" value="+30">
+                      </td>
+                  </tr>
+              </table>
         </div>
     </span>
 </div>
