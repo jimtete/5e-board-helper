@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Table Generation</title>
+    <style>
+        #table{
+            margin-left: 200px;
+        }
+
+        /* Define table border color */
+        #myTable {
+            border-collapse: collapse;
+        }
+
+        #myTable td, #myTable th {
+            border: 1px solid black;
+            padding: 8px;
+            height: 8px;
+            width: 200px;
+        }
+
+        #time{
+            width: 550px;
+            height: 120px;
+            font-size: 100px;
+            font-family: "Hack";
+            text-align: center;
+        }
+
+        .container{
+            display: flex;
+        }
+
+        .otherItems{
+            margin-left: 1000px;
+            margin-top: -750px;
+        }
+    </style>
+</head>
+<body>
+<div class="container" id="table">
+    <span>
+        <table id="myTable">
+        <!-- Table will be generated here -->
+        </table>
+        <div class="otherItems">
+
+        </div>
+    </span>
+</div>
+<script src="table_utils.js"></script>
+</body>
+</html>
