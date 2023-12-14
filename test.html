@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Dynamic Table Generation</title>
+    <title>Πρόγραμμα Γ.Κ.Ε.Π.</title>
     <style>
         #table{
             margin-left: 200px;
@@ -14,9 +14,19 @@
 
         #myTable td, #myTable th {
             border: 1px solid black;
-            padding: 8px;
+            padding: 2px;
             height: 8px;
+            font-size: 18px;
+            font-family: Arial;
             width: 200px;
+        }
+
+        #myTable tbody tr:nth-child(odd) {
+            background-color: lightblue; /* Apply a background color to odd rows */
+        }
+
+        #myTable tbody tr:nth-child(even) {
+            background-color: #b9e2a9; /* Apply a background color to even rows */
         }
 
         #time{
@@ -91,6 +101,6 @@
         </div>
     </span>
 </div>
-<script src="table_utils.js"></script>
+<script src="./table_utils.js"></script>
 </body>
 </html>
