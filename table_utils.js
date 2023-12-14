@@ -154,12 +154,14 @@ function timeToSeconds(time){
     let [hours, minutes, seconds] = time.split(':').map(Number);
 
     // Calculate total seconds
-    let totalSeconds = hours * 3600 + minutes * 60 + seconds;
+    let totalSeconds = hours * 3600 + minutes * 60;
 
     globalTime = totalSeconds;
+
+    updateTime(false);
 }
 
-function updateTime(){
+function updateTime(addOffset = true){
     let remainingSeconds = globalTime
 
     let hours = Math.floor(remainingSeconds / 3600);
@@ -177,7 +179,14 @@ function updateTime(){
     // Pad hours, minutes, and seconds with leading zeros if necessary
     let hoursString = padWithZero(hours);
     let minutesString = padWithZero(minutes);
-    let secondsString = padWithZero(remainingSeconds);
+
+    let extraSeconds = 0;
+
+    if (addOffset){
+        extraSeconds = Math.floor(Math.random() * 30);
+    }
+
+    let secondsString = padWithZero(remainingSeconds+extraSeconds);
 
     // Construct the time string with formatted hours, minutes, and seconds
     let timeString = `${hoursString}:${minutesString}:${secondsString}`;
@@ -325,10 +334,6 @@ function shuffleTable(){
     let tableContents = generateTableContents(dataCopy);
 
     fillTable(tableContents);
-
-    console.log(document.getElementById("myTable"))
-
-    console.log(tableContents);
 }
 
 function addSeconds(amount){
